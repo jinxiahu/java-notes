@@ -116,3 +116,54 @@ java中需要注意的概念
              • 子类的finalize()方法
                     可以在子类的finalize()方法释放系统资源
                     一般来说，子类的finalize()方法中应该调用父类的finalize()方法，以保证父类的清理工作能够正常进行。
+ 
+   类：是对象的模板或蓝图，是一个抽象概念。
+   对象：是类的具体化，类的实例化。
+   java中的包都是由小写单词组成的。类的名字开头必须大写，如果由多个单词组成，建议最好每个单词开头大写。方法的名字第一个单词应小写，后面的单词则大写开头例如：sendMessage();
+   参数的命名和方法的命名规则一样；
+   对象的变量也成为实例变量；隶属于对象的实例变量和实例方法统称为实例成员；
+   静态成员是隶属于类的，不属于任何一个对象，并且在加载时就会初始化静态变量，静态变量和静态方法统称为静态成员。
+   java中有两种值：对象的引用和元数据类型值；
+   注意：不能再静态方法中使用非静态变量；
+   java的关键字都是小写的；
+   java 的两种数据类型：
+              原始数据类型，分为boolean,byte,in,char,long,short,double,float
+              引用数据类型 ，分为数组,类,接口
+   int  和  Integer的区别：
+             int是原始数据类型，直接存数值，初始化的int型值为0；
+             Integer是对象，用一个引用指向这个对象，初始化则为null；
+   ### Java为每个原始类型提供了封装类；为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，
+       Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，
+       从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。
+   原始类型: boolean，char，byte，short，int，long，float，double
+   封装类类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
+   
+   
+   自动装箱：将基本数据类型重新转化为对象（例如：将int型转化为Integer对象）  
+             public class Test {  
+                 public static void main(String[] args) {  
+                //声明一个Integer对象
+                Integer num = 9;
+            //以上的声明就是用到了自动的装箱：解析为:Integer num = new Integer(9);
+          }  
+       }  
+   自动拆箱：将对象重新转化为基本数据类型（对一个对象进行数据操作会进行拆箱变为基本数据类型后然后进行运算）
+        public class Test {  
+        public static void main(String[] args) {  
+            //声明一个Integer对象
+            Integer num = 9;
+
+            //进行计算时隐含的有自动拆箱
+            System.out.print(num--);//因为对象时不能直接进行运算的，而是要转化为基本数据类型后才能进行加减乘除。
+        }  
+    }  
+    装箱和拆箱进行对比：
+         //装箱
+        Integer num = 10;
+        //拆箱
+        int num1 = num;
+ 
+ 
+ 
+ 
+ 
