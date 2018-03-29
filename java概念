@@ -162,7 +162,17 @@ java中需要注意的概念
         Integer num = 10;
         //拆箱
         int num1 = num;
- 
+  
+  java中length 和 length()的区别？
+     Java的String类可以定义字符串变量和字符串数组；如String s1 = new String("abcdef");//字符串变量  String[] s2 ={"andy","danmon","lily","selina"};//字符串数组
+        length()用于计算字符串变量的长度，length用于计算字符串数组的长度
+        s1.length()// 7
+        s2.length// 4
+      计算数组的长度用length；数组的大小不能改变，可以重新创建新数组
+      size()是针对泛型数组求长度的方法
+      
+      
+       
  
  
  
