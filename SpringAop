@@ -1,0 +1,34 @@
+什么是面想切面编程（aop）？
+   面向对象的编程将实现不同功能的对象进行封装，即设计不同的类从而进行解耦，面向切面的编程则是在不同的类中依然有实现相同的方法，例如日志，缓存以及事务管理等功能，将不同的类中实现相同功能的函数进行封装，这就是面向切面的意思。
+springAOP主要基于动态代理和cglib来实现的
+什么是代理类？
+  代理类和委托类具有相同的接口，代理类主要负责为委托类预处理消息、过滤消息、把消息转发给委托类，以及事后处理消息等。代理类与委托类之间
+  通常会存在关联关系，一个代理类的对象与一个委托类的对象关联，代理类的对象本身并不真正实现服务，而是通过调用委托类的对象的相关方法，
+  来提供特定的服务。
+静态代理和动态代理的区别？？
+   静态代理：静态代理类和真实委托类实现相同的接口，静态代理类中传入真实委托类的对象，并且实现委托类中的方法或者对方法进行增强。例如：
+ public interface StaticProxyInterface{
+      public void queryInfo();
+ }//共同接口
+   
+ public class StaticProxyImpl implements StaticProxyInterface{
+    public void queryInfo(){
+        System.out.println("代理模式之静态代理");
+    }
+ }//真实委托类
+   
+ public class StaticProxy implements StaticProxyInterface{
+     private StaticProxyImpl staticProxyImpl;
+     public StaticProxy(StaticProxyImpl staticProxyImpl){
+         this.staticProxyImpl = staticProxyImpl;
+     }
+     public void queryInfo(){
+       System.out.println("事务处理之前");//增强
+       staticProxyImpl.queryInfo();
+       System.out.println("事务处理之后")  //增强
+     }
+ }//代理类
+ 
+动态代理分为JDK的动态代理和CGLIB的动态代理：JDK的动态代理依赖具体的接口，需要绑定接口，如果一个类没有绑定接口，则不能实现JDK动态代理。
+JDK动态代理利用反射的机制实现
+   
