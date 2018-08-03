@@ -1,0 +1,10 @@
+Executor:具体Runnable任务的执行者（接口） 包含一个excute（Runnable command）方法
+ExecutorService：一个线程池管理者，继承自Executor接口
+Future接口中包含：  boolean cancel(boolean mayInterruptIfRunning)
+                  boolean isCancelled();//检验该任务在正常完成前是否停止了
+                   boolean isDone();//检验该任务是否完成
+                    V get() throws InterruptedException, ExecutionException;
+                    
+                   
+
+
